@@ -9,7 +9,7 @@ namespace Ideastrike.Modules
     public class DataModule : Module
     {
         protected override void Load(ContainerBuilder builder)
-        {
+        { 
             if (ConfigurationManager.ConnectionStrings.Count > 0 && ConfigurationManager.ConnectionStrings["Ideastrike"] != null)
                 builder.RegisterType<IdeastrikeContext>()
                     .WithParameter(new NamedParameter("nameOrConnectionString", ConfigurationManager.ConnectionStrings["Ideastrike"].ConnectionString + ";MultipleActiveResultSets=true"))
