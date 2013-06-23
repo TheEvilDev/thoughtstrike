@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using Autofac;
+using Ideastrike.MessageHandlers;
 using Ideastrike.Plumbing;
 
 namespace Ideastrike.Modules
@@ -12,6 +13,7 @@ namespace Ideastrike.Modules
             builder.RegisterInstance(GlobalConfiguration.Configuration).As<HttpConfiguration>();
             builder.RegisterType<AutoFacCompositionRoot>().As<IHttpControllerActivator>().SingleInstance();
             builder.RegisterType<NamespaceHttpControllerSelector>().As<IHttpControllerSelector>().SingleInstance();
+            builder.RegisterType<ApiKeyHandler>().AsSelf().SingleInstance();
         }
     }
 }

@@ -161,6 +161,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageHandlers\ApiKeyHandler.cs" />
     <Compile Include="Helpers\ContainerBuilderExtensions.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CommentController.cs" />

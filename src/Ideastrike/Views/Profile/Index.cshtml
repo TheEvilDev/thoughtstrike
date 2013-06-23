@@ -1,4 +1,6 @@
-﻿@functions{
+﻿@model dynamic
+
+@functions{
     public string ValueOrNotSet(string value) 
     {
         return string.IsNullOrEmpty(value) ? "[not set]" : value;
@@ -59,14 +61,19 @@
     @if (Model.Votes.Count > 0)
     {
         <ul>
-        @foreach (var vote in Model.Votes)
-        {
-            <li class="span8 text"><a href="/idea/@vote.Idea.Id">@vote.Idea.Title</a></li>
-        }
+            @foreach (var vote in Model.Votes)
+            {
+                <li class="span8 text"><a href="/idea/@vote.Idea.Id">@vote.Idea.Title</a></li>
+            }
         </ul>
     }
     else
     {
         <span>No votes yet..</span>
     }
+</section>
+
+<section>
+    <h3>API Key:</h3>
+    <span class="span8 text">@Model.Id.ToString().ToUpper()</span>
 </section>
