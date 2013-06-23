@@ -1,8 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System;
+using System.Runtime.Serialization;
 
 namespace Ideastrike.Models
 {
+    [DataContract(IsReference = true)]
     public class Vote
     {
         public int Value { get; set; }

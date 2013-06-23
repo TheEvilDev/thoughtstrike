@@ -107,6 +107,7 @@
     <Reference Include="System.Runtime">
       <HintPath>..\packages\Microsoft.Bcl.1.0.19\lib\net40\System.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Threading.Tasks">
       <HintPath>..\packages\Microsoft.Bcl.1.0.19\lib\net40\System.Threading.Tasks.dll</HintPath>
     </Reference>
@@ -160,14 +161,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\ContainerBuilderExtensions.cs" />
+    <Compile Include="Helpers\ContainerBuilderExtensions.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IdeaController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
-    <Compile Include="Controllers\v1\IdeaController.cs" />
+    <Compile Include="Controllers\v1\IdeasController.cs" />
     <Compile Include="Helpers\ObjectExtensions.cs" />
     <Compile Include="Models\ViewModels\SettingsViewModel.cs" />
     <Compile Include="Controllers\TokenController.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="Models\ViewModels\ImageViewModel.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Modules\ApiModule.cs" />
+    <Compile Include="Plumbing\AutoFacCompositionRoot.cs" />
     <Compile Include="Modules\ControllersModule.cs" />
     <Compile Include="Modules\DataModule.cs" />
     <Compile Include="Modules\MvcModule.cs" />
@@ -248,8 +250,10 @@
     <Compile Include="Startables\CreateBundlesStartable.cs" />
     <Compile Include="Startables\MigrateDatabaseStartable.cs" />
     <Compile Include="Startables\MvcStartable.cs" />
+    <Compile Include="Plumbing\NamespaceHttpControllerSelector.cs" />
     <Compile Include="Startables\RegisterGlobalFiltersStartable.cs" />
     <Compile Include="Startables\RegisterRoutesStartable.cs" />
+    <Compile Include="Startables\WireUpApiStartable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.css" />

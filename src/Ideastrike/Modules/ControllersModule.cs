@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Web.Http;
+using Autofac;
 using Autofac.Integration.Mvc;
 
 namespace Ideastrike.Modules
@@ -8,6 +9,11 @@ namespace Ideastrike.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterControllers(ThisAssembly);
+
+            builder.RegisterAssemblyTypes(ThisAssembly)
+                   .AssignableTo<ApiController>()
+                   .AsSelf()
+                   .InstancePerDependency();
         }
     }
 }

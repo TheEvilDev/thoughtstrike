@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace Ideastrike.Models
 {
@@ -21,9 +22,12 @@ namespace Ideastrike.Models
         public string Description { get; set; }
         public string Status { get; set; }
         public DateTime Time { get; set; }
+
         public ICollection<Vote> Votes { get; set; }
+
         public ICollection<Activity> Activities { get; set; }
         public ICollection<Feature> Features { get; set; }
+
         public User Author { get; set; }
 
         [NotMapped]

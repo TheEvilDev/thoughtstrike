@@ -5,11 +5,11 @@ using Ideastrike.Models.Repositories;
 
 namespace Ideastrike.Controllers.v1
 {
-    public class IdeaController : ApiController
+    public class IdeasController : ApiController
     {
         private readonly IIdeaRepository _ideaRepository;
 
-         public IdeaController(IIdeaRepository ideaRepository)
+         public IdeasController(IIdeaRepository ideaRepository)
         {
             _ideaRepository = ideaRepository;
         }

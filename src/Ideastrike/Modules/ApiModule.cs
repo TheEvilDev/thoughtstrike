@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using Autofac;
+using Ideastrike.Plumbing;
 
 namespace Ideastrike.Modules
 {
@@ -9,7 +10,8 @@ namespace Ideastrike.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterInstance(GlobalConfiguration.Configuration).As<HttpConfiguration>();
-            // builder.RegisterType<AutofacControllerActivator>().As<IHttpControllerActivator>().SingleInstance();
+            builder.RegisterType<AutoFacCompositionRoot>().As<IHttpControllerActivator>().SingleInstance();
+            builder.RegisterType<NamespaceHttpControllerSelector>().As<IHttpControllerSelector>().SingleInstance();
         }
     }
 }

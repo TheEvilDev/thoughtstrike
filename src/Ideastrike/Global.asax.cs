@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Web;
 using Autofac;
-using Ideastrike.Extensions;
+using Ideastrike.Helpers;
 using Ideastrike.Models.Repositories;
 
 namespace Ideastrike
